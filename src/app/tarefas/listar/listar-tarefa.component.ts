@@ -29,4 +29,16 @@ export class ListarTarefaComponent implements OnInit {
     }
   }
 
+  alteraStatusTarefa(tarefa: Tarefa): void {
+    if (tarefa.concluida !== true) {
+      if (confirm('A tarefa "'+tarefa.nome+'" foi concluida?')) {
+        this.tarefaService.alteraStatusTarefa(tarefa.id);
+      }
+    } else {
+      if(confirm('Deixar a tarefa "'+tarefa.nome+'" como pendente?')) {
+        this.tarefaService.alteraStatusTarefa(tarefa.id);
+      }
+    }
+    this.tarefas = this.listarTodos();
+  }
 }

@@ -20,6 +20,4 @@ export class ListarTarefaComponent implements OnInit {
   listarTodos(): Tarefa[] {
     return this.tarefaService.listarTodos();
   }
-
-
 }

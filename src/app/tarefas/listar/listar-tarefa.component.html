@@ -15,8 +15,8 @@
       </tr>
       <tr *ngFor="let tarefa of tarefas">
         <td
-            [class.sucess]="!tarefa.concluida">
-            {{ tarefa.nome }}      
+          [class.sucess]="!tarefa.concluida">
+          {{ tarefa.nome }}      
         </td>
         <td style="width: 70px" class="text-center">
           <input
@@ -25,7 +25,7 @@
             [checked]="tarefa.concluida">
         </td>
         <td class="text-center" style="width: 200px">
-          <a
+          <a [routerLink]="['/tarefas/editar', tarefa.id]"
             title="Editar" alt="Editar"
             class="btn btn-xs btn-info">
             <span class="glyphicon glyphicon-pencil"
